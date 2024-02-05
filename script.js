@@ -27,6 +27,7 @@ function showBeers(beerJSON) {
   console.log("første json element", beerJSON[0]);
 
   let beerClone = beerTemplate.cloneNode(true).content;
+  beerClone.querySelector("a").href = `produkt.html?id=${beerJSON.id}"`;
   beerClone.querySelector(".beer_image").src = beerJSON[0].image_url;
   beerClone.querySelector(".beer_image").alt = `Picture of a ${beerJSON[0].name} beer`;
   beerClone.querySelector(".beer_name").textContent = beerJSON[0].name;
